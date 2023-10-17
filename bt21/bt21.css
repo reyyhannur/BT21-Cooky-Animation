@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas;
+}
+body {
+  overflow: hidden;
+  background: #000;
+}
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#f00, rgba(0, 0, 0, 0.5));
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  animation: animatebgcol 5s linear infinite;
+}
+@keyframes animatebgcol {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.bt21 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.neon-container {
+  display: flex;
+  position: relative;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px 5px #fecaf5, 0 0 20px 10px #fe7cfa, 0 0 30px 15px #fd42d5,
+    0 0 40px 20px #ef02c6, 0 0 50px 25px #ac019b;
+  transition: transform 0.1s ease-in-out;
+}
+
+.neon-container:hover {
+  animation: neon-pulse 1s linear, rotate-scale 2s linear,
+    neon-spin 2s linear infinite alternate;
+  transform: scale(1.1) rotate(0deg);
+}
+
+@keyframes rotate-scale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.7) rotate(360deg);
+  }
+}
